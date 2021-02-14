@@ -19,9 +19,9 @@ const UnFinished = () => {
           className="form-control"
           style={{
             height: "60px",
-            marginBottom: "1%",
-            color: "black",
-            fontSize: "16px",
+            marginBottom: "2%",
+            fontSize: "22px",
+            fontWeight: "bold",
           }}
         >
           {task.name}
@@ -42,9 +42,9 @@ const UnFinished = () => {
     ));
 
   return (
-    <div class="card text-white bg-dark mb-3">
-      <div class="card-header">
-        <h3>Not Done</h3>
+    <div className="card text-white bg-dark mb-3">
+      <div className="card-header">
+        <h3>To Do ⏳</h3>
         <div>
           <h4 style={{ color: "orange" }}>
             {unFinishedTask.length}
@@ -56,14 +56,14 @@ const UnFinished = () => {
           </h4>
         </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">
+      <div className="card-body">
+        <h5 className="card-title">
           <div style={{ marginBottom: "5%" }}>
             <h4>Search</h4>
             <SearchBar setQuery={setQuery} />
           </div>
         </h5>
-        <p class="card-text" style={{ color: "black" }}>
+        <p className="card-text" style={{ color: "black" }}>
           {unFinishedTask}
         </p>
       </div>

@@ -8,7 +8,7 @@ export const FETCH_TASK = "FETCH_TASK ";
 export const fetchTasks = () => {
   return async (dispatch) => {
     try {
-      const res = await axios.get("http://localhost:8000/");
+      const res = await axios.get("http://localhost:8000/tasks/");
       dispatch({
         type: FETCH_TASK,
         payload: res.data,
@@ -22,7 +22,7 @@ export const fetchTasks = () => {
 export const addTask = (newTask) => {
   return async (dispatch) => {
     try {
-      const res = await axios.post(`http://localhost:8000/`, newTask);
+      const res = await axios.post(`http://localhost:8000/tasks/`, newTask);
       dispatch({
         type: ADD_TASK,
         payload: { newTask: res.data },
@@ -36,7 +36,7 @@ export const addTask = (newTask) => {
 export const deleteTask = (taskId) => {
   return async (dispatch) => {
     try {
-      const res = await axios.delete(`http://localhost:8000/${taskId}`);
+      await axios.delete(`http://localhost:8000/tasks/${taskId}`);
       dispatch({
         type: DELETE_TASK,
         payload: { taskId: taskId },
@@ -50,7 +50,10 @@ export const deleteTask = (taskId) => {
 export const updateTask = (updatedTask) => {
   return async (dispatch) => {
     try {
-      await axios.put(`http://localhost:8000/${updatedTask.id}`, updatedTask);
+      await axios.put(
+        `http://localhost:8000/tasks/${updatedTask.id}`,
+        updatedTask
+      );
       dispatch({
         type: UPDATE_TASK,
         payload: { updatedTask: updatedTask },

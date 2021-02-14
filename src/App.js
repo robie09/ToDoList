@@ -12,9 +12,10 @@ function App() {
           color: "white",
           marginTop: "2%",
           fontWeight: "bold",
+          fontSize: "40px",
         }}
       >
-        Movie List 🎬
+        To Do List 📝
       </h1>
       <div className="row">
         <div className="col" style={{ marginTop: "5%" }}>
