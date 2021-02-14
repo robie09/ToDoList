@@ -1,5 +1,6 @@
 import { updateTask } from "../../store/actions";
 import { useDispatch } from "react-redux";
+import { MdDoneAll } from "react-icons/md";
 
 const DoneButton = ({ status }) => {
   const dispatch = useDispatch();
@@ -9,9 +10,10 @@ const DoneButton = ({ status }) => {
     dispatch(updateTask(status));
   };
   return (
-    <button type="button" className="btn btn-success" onClick={handleUpdate}>
-      Done
-    </button>
+    <MdDoneAll
+      style={{ float: "right", color: "green" }}
+      onClick={handleUpdate}
+    />
   );
 };
 

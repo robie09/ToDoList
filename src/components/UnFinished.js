@@ -26,6 +26,7 @@ const UnFinished = () => {
         >
           {task.name}
           <DeleteButton taskId={task.id} />
+
           <button
             style={{ float: "right", marginRight: "1%" }}
             type="button"

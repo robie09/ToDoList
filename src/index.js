@@ -9,6 +9,7 @@ import reducer from "./store/reducer";
 import { Provider } from "react-redux";
 import { fetchTasks } from "./store/actions";
 import thunk from "redux-thunk";
+import { BrowserRouter } from "react-router-dom";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -19,7 +20,9 @@ store.dispatch(fetchTasks());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

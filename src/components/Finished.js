@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import DeleteButton from "./buttons/DeleteButton";
 import { updateTask } from "../store/actions";
+import DoneButton from "./buttons/DoneButton";
 
 const Finished = () => {
   const [query, setQuery] = useState("");

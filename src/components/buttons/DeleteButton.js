@@ -1,21 +1,18 @@
 import { deleteTask } from "../../store/actions";
 import { useDispatch } from "react-redux";
+import { MdDelete } from "react-icons/md";
 
-const DeleteButton = ({ movieId }) => {
+const DeleteButton = ({ taskId }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(deleteTask(movieId));
+    dispatch(deleteTask(taskId));
   };
   return (
-    <button
-      style={{ float: "right" }}
-      type="button"
-      className="btn btn-outline-danger"
+    <MdDelete
+      style={{ float: "right", color: "maroon" }}
       onClick={handleDelete}
-    >
-      Delete
-    </button>
+    />
   );
 };
 

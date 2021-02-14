@@ -1,30 +1,24 @@
 import "./App.css";
+import TaskForm from "./components/TaskForm";
+import { Link } from "react-router-dom";
 
-import Finished from "./components/Finished";
-import UnFinished from "./components/UnFinished";
+import { Route, Switch } from "react-router";
+import ToDoList from "./components/ToDoList";
 
 function App() {
   return (
     <div className="container">
-      <h1
-        style={{
-          textAlign: "center",
-          color: "white",
-          marginTop: "2%",
-          fontWeight: "bold",
-          fontSize: "40px",
-        }}
-      >
-        To Do List 📝
-      </h1>
-      <div className="row">
-        <div className="col" style={{ marginTop: "5%" }}>
-          <UnFinished />
-        </div>
-        <div className="col" style={{ marginTop: "5%" }}>
-          <Finished />
-        </div>
-      </div>
+      <Switch>
+        <Route path="/newtask">
+          <TaskForm />
+        </Route>
+      </Switch>
+      <Link to="/newtask">
+        <button>AddTask</button>
+      </Link>
+      <Route exact path="/">
+        <ToDoList />
+      </Route>
     </div>
   );
 }

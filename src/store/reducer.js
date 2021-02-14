@@ -8,6 +8,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
       const { newTask } = action.payload;
+
       return {
         ...state,
         tasks: [...state.tasks, newTask],
@@ -20,14 +21,14 @@ const reducer = (state = initialState, action) => {
       };
 
     case UPDATE_TASK:
+      // const { updatedTask } = action.payload;
+
       return { ...state, tasks: [...state.tasks] };
 
     case DELETE_TASK:
       return {
         ...state,
-        tasks: state.tasks.filter(
-          (product) => product.id !== action.payload.productId
-        ),
+        tasks: state.tasks.filter((task) => task.id !== action.payload.taskId),
       };
 
     default:
